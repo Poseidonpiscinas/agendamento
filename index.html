@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Pagina de agendamento</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="imagens/AgroBov ico.webp" type="image/x-icon">
+        <link rel="icon" href="imagens/AgroBov ico.webp" sizes="16x16" />
+        <link rel="icon" href="imagens/AgroBov ico.webp" sizes="32x32" type="image/png" />
+        <link rel="icon" href="imagens/AgroBov ico.webp" sizes="48x48" type="image/png" />
+        <link rel="apple-touch-icon" href="imagens/AgroBov ico.webp">
+</head>
+<body>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-image: url(imagens/agua.webp);
+            flex-direction: column;
+            align-items: center;
+        }
+        .bandeira{
+            position: absolute;
+            margin: -80px 0% 0% 70%;
+            height: 80px;
+            transition: 1s;
+        }
+        .bandeira:hover{
+            position: absolute;
+            margin: -40px 0% 0% 70%;
+            height: 80px;
+            transition: 1s;
+        }
+        a {
+            margin: 0px 100% 0px 0px;
+        }
+        img.voltar {
+            display: flex;
+            height: 30px;
+        }
+        img.logo {
+            width: 200px;
+        }
+        form {
+            max-width: 460px;
+            margin: 0 auto;
+            padding: 41px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        .termos{
+            margin: 15px 0px;
+            display: inline-flex;
+            align-items: baseline;
+        }
+        .link{
+            margin: 0px 6px;
+            color: black;
+            text-decoration: none;
+        }
+        .link:hover{
+            color: blue;
+            text-decoration: underline;
+        }
+        input.caixalink{
+            width: 15px;
+        }
+        label {
+            margin: 15px 0px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+        input, select, button {
+            width: 100%;
+            padding: 9px 0px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            }
+            button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        
+    </style>
+    <img src="imagens/brasil pt.webp" alt="brasil" class="bandeira"></p>
+    <a href="https://infinitycooperative.github.io/Poseidon/"><img src="imagens/voltar pt.webp" class="voltar" alt="botão de voltar"></a>
+    <img src="imagens/Poseidon nome pt.webp" class="logo" alt="logo">
+    <h1>Agendamento de Horário</h1>
+    <p>Preencha o formulário abaixo para agendar um horário.</p>
+    
+    <form id="agendamentoForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+        <label for="servico">Serviço:</label>
+        <select id="servico" name="servico" required>
+            <option value="">Selecione o serviço:</option>
+            <option value="Visista">Visita ao local (mesma cidade) R$50,00</option>
+            <option value="Viagem">Visita ao local (outra cidade) *R$100,00</option>
+            <option value="Orçamento">Orçamento R$0,00</option>
+        </select>
+
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data" required>
+
+        <label for="hora">Hora:</label>
+        <select id="hora" name="hora" required>
+            <!-- Horários das 7:00 às 19:00 de 30 em 30 minutos -->
+            <option value="">Selecione o horário</option>
+            <option value="07:00">07:00</option>
+            <option value="07:30">07:30</option>
+            <option value="08:00">08:00</option>
+            <option value="08:30">08:30</option>
+            <option value="09:00">09:00</option>
+            <option value="09:30">09:30</option>
+            <option value="10:00">10:00</option>
+            <option value="10:30">10:30</option>
+            <option value="11:00">11:00</option>
+            <option value="11:30">11:30</option>
+            <option value="12:00">12:00</option>
+            <option value="12:30">12:30</option>
+            <option value="13:00">13:00</option>
+            <option value="13:30">13:30</option>
+            <option value="14:00">14:00</option>
+            <option value="14:30">14:30</option>
+            <option value="15:00">15:00</option>
+            <option value="15:30">15:30</option>
+            <option value="16:00">16:00</option>
+            <option value="16:30">16:30</option>
+            <option value="17:00">17:00</option>
+            <option value="17:30">17:30</option>
+            <option value="18:00">18:00</option>
+        </select>
+
+        <div class="termos">
+            <input type="checkbox" name="caixa" class="caixalink" required>Li e aceito os<a href="https://infinitycooperative.github.io/termos-de-servico/" class="link">Termos de serviço.</a>Ou clique<a href="https://drive.usercontent.google.com/download?id=1sGamsVXC0T-lYq78pP5ye51iLIe6Zfmw&export=download&authuser=0&confirm=t&uuid=1619816c-36ed-4f46-9986-82eacabcb0ce&at=APvzH3rDf5-jVisMKZg3xz2ZPfWC:1735974988846" download="termo de serviço.pdf" class="link" target="_blank">aqui</a>para baixar.
+        </div>
+
+        <button type="submit">Agendar</button>
+        <small>* Valores podem variar em relação a cidade</small>
+    </form>
+
+    <script>
+        document.getElementById('agendamentoForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const servico = document.getElementById('servico').value;
+            const data = document.getElementById('data').value;
+            const hora = document.getElementById('hora').value;
+
+            // Número de WhatsApp para envio
+            const telefoneWhatsApp = "+5518997981868"; // Substitua pelo número correto
+
+            // Formatar mensagem para WhatsApp
+            const mensagem = `Olá, gostaria de agendar:\n\n` +
+                             `Nome: ${nome}\n` +
+                             `Serviço: ${servico}\n` +
+                             `Data: ${data}\n` +
+                             `Hora: ${hora}\n`;
+
+            // Enviar para o WhatsApp
+            const whatsappLink = `https://wa.me/${telefoneWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+            window.open(whatsappLink, '_blank');
+
+            // Redirecionar para a página de pagamento
+            setTimeout(() => {
+                window.location.href = "https://infinitycooperative.github.io/pagamentos/"; // Substitua pelo link da página de pagamento
+            }, 2000); // Delay para permitir abrir o WhatsApp
+        });
+    </script>
+</body>
+</html>
